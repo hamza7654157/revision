@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Résumé — Algorithmique</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7dd3fc;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071028);color:#e6eef8;line-height:1.5}
+    .container{max-width:900px;margin:32px auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#032; font-weight:700}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+
+    .card{background:linear-gradient(180deg,var(--card),rgba(11,18,32,0.6));padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .section{padding:12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .section h2{margin:0 0 8px;font-size:16px}
+    .meta{font-size:13px;color:var(--muted)}
+    ul{margin:8px 0 0 18px}
+    code{background:rgba(255,255,255,0.03);padding:2px 6px;border-radius:6px;color:var(--accent)}
+
+    .types{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);font-size:13px}
+
+    footer{margin-top:14px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+
+    /* responsive */
+    @media (min-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .accent{color:var(--accent);font-weight:600}
+    .copy{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">AL</div>
+      <div>
+        <h1>Résumé du cours — <span class="accent">Algorithmique</span></h1>
+        <p class="lead">Version structurée et prête à lire (français). Clique sur copier pour récupérer le code.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+        <div class="meta">Contenu : introduction, étapes, langages, structures, boucles, exemples</div>
+        <button class="copy" onclick="copyText()">Copier le résumé</button>
+      </div>
+
+      <div class="grid">
+        <section class="section">
+          <h2>1. Introduction</h2>
+          <div class="meta">Origine & définition</div>
+          <p>Le terme vient d' <strong>Al-Khawarizmi</strong>. Un <strong>algorithme</strong> est une suite d'instructions permettant de résoudre un problème étape par étape. Exemple : recette de cuisine, mode d'emploi.</p>
+        </section>
+
+        <section class="section">
+          <h2>2. Étapes de conception</h2>
+          <ul>
+            <li><strong>Analyse</strong> : comprendre le problème.</li>
+            <li><strong>Conception</strong> : définir les étapes.</li>
+            <li><strong>Implantation</strong> : traduire en code.</li>
+            <li><strong>Test</strong> : vérifier le fonctionnement.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>3. Caractéristiques</h2>
+          <ul>
+            <li>Clair et précis</li>
+            <li>Ordre d'exécution défini</li>
+            <li>Résout le problème</li>
+            <li>Indépendant du langage</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>4. Algorithmique & programmation</h2>
+          <p>Un <strong>programme</strong> est la traduction d'un algorithme dans un langage. Le processeur exécute ces instructions. La programmation sert à traiter des données et obtenir des résultats.</p>
+        </section>
+
+        <section class="section">
+          <h2>5. Langages de programmation</h2>
+          <div class="types">
+            <div class="pill">Langage machine — binaire</div>
+            <div class="pill">Assembleur — proche du processeur</div>
+            <div class="pill">Interprétés — HTML, Maple, Prolog</div>
+            <div class="pill">Compilés — C, C++, Cobol</div>
+            <div class="pill">Intermédiaires — Java, Python</div>
+          </div>
+          <p class="muted" style="margin-top:8px">Interprétés : souples mais lents. Compilés : rapides mais nécessitent recompilation.</p>
+        </section>
+
+        <section class="section">
+          <h2>6. Démarche</h2>
+          <ol style="margin:8px 0 0 18px">
+            <li>Analyse</li>
+            <li>Écriture de l'algorithme</li>
+            <li>Traduction en programme</li>
+            <li>Compilation / exécution</li>
+            <li>Tests et résultats</li>
+          </ol>
+        </section>
+
+        <section class="section">
+          <h2>7. Pseudo-langage</h2>
+          <p>Structure lisible : <code>Algorithme NomAlgorithme</code> — déclarations — <code>Début</code> ... <code>Fin</code>. Utilise des commentaires <code>/* ... */</code>.</p>
+        </section>
+
+        <section class="section">
+          <h2>8. Variables & types</h2>
+          <ul>
+            <li><strong>Entier</strong> — nombres sans virgule</li>
+            <li><strong>Réel</strong> — nombres à virgule</li>
+            <li><strong>Caractère</strong> — un symbole</li>
+            <li><strong>Chaîne</strong> — texte</li>
+            <li><strong>Logique</strong> — Vrai / Faux</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>9. Affectation & opérateurs</h2>
+          <p>Affectation : <code>X ← 3</code>. Opérateurs : <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>. Concaténation : <code>&</code>.</p>
+        </section>
+
+        <section class="section">
+          <h2>10. Entrée / Sortie</h2>
+          <p><code>Lire()</code> pour saisir, <code>Écrire()</code> pour afficher.</p>
+        </section>
+
+        <section class="section">
+          <h2>11. Structures conditionnelles</h2>
+          <p>Exemples : <code>Si ... Alors ... Sinon ... FinSi</code> et <code>Selon ... Faire</code> pour choix multiples.</p>
+        </section>
+
+        <section class="section">
+          <h2>12. Structures répétitives (boucles)</h2>
+          <ul>
+            <li><code>TantQue condition Faire</code> — boucle testée avant l'action.</li>
+            <li><code>Répéter ... Jusqu'à</code> — boucle testée après l'action.</li>
+            <li><code>Pour i de 1 à N Faire</code> — boucle avec compteur.</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <footer>
+        <div>Résumé généré automatiquement • Prêt pour impression</div>
+        <div class="muted">Besoin d'une version imprimable (PDF) ? Dis-le-moi.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function copyText(){
+      const text = 🧠 Résumé du cours : L’Algorithmique\n\n1. Introduction:\nLe terme vient d'Al-Khawarizmi. Un algorithme est une suite d'instructions...;
+      navigator.clipboard?.writeText(text).then(()=>{
+        alert('Résumé copié dans le presse-papiers (version courte).')
+      }).catch(()=>alert('Impossible de copier — utilise Ctrl+C.'))
+    }
+  </script>
+</body>
+</html>
+choff hada
